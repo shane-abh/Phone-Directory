@@ -1,12 +1,12 @@
 import React from "react";
-import './Header.css'
+import './Header.css';
 
 
-const Header = function(){
+const Header = function(props){
     
     return(
         <div className="header" >
-          <h1 >Phone Directory</h1>
+          <h1 >{props.heading}</h1>
         </div>
     );
 }
