@@ -1,29 +1,19 @@
 import React, { Component } from 'react';
 import Header from './Header';
 import './ShowSubscriber.css';
+import {Link} from 'react-router-dom';
 
 
-// let subscribers  = [
-    //   {
-    //     id:1,
-    //     name: "Shane",
-    //     phone: "000000000"
-    //   },
-    //   {
-    //     id:2,
-    //     name: "Tom",
-    //     phone: "000000000"
-    //   }
-    // ];
 
 class ShowSubcriber extends Component {
 
  
   
 
- 
+  onDeletedClick = (subscriberId) => {
+    this.props.deleteSubscriberHandler(subscriberId); 
+  }
 
-  
   clickHandler(message){
     alert(message);
   }
@@ -37,7 +27,9 @@ class ShowSubcriber extends Component {
         <Header heading= "Phone Directory"/>
 
         <div className="component-body-container">
-          <button className="btn-primary">Add</button>
+         <Link to="/add">
+            <button className="btn-primary">Add</button>
+          </Link>
 
           <div className="grid-container heading-container">
             <span className="grid-item name-heading">Name</span>
@@ -50,7 +42,7 @@ class ShowSubcriber extends Component {
               <span className="grid-item">{sub.name}</span>
               <span className="grid-item">{sub.phone}</span>
               <span className="grid-item action-btn-container">
-                  <button className="delete-btn" onClick={this.clickHandler.bind(this,"Deleted")}>Delete</button>
+                  <button className="delete-btn" onClick={this.onDeletedClick.bind(this,sub.id)}>Delete</button>
                 </span>
               </div>
             

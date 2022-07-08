@@ -1,8 +1,6 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
+import  ReactDOM  from 'react-dom';
 import './index.css';
-import ShowSubscriber from './ShowSubscriber';
-import AddSubscriber from './AddSubsciber';
 import reportWebVitals from './reportWebVitals';
 import './Common/common.css'
 import PhoneDirectory from './PhoneDirectory';
